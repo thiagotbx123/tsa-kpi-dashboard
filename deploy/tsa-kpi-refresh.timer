@@ -1,0 +1,11 @@
+[Unit]
+Description=Run TSA KPI refresh weekdays at 09:00 BRT (12:00 UTC)
+
+[Timer]
+# EC2 default timezone is UTC. 12:00 UTC == 09:00 BRT (UTC-3).
+OnCalendar=Mon..Fri *-*-* 12:00:00
+Persistent=true
+Unit=tsa-kpi-refresh.service
+
+[Install]
+WantedBy=timers.target

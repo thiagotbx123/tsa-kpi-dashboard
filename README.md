@@ -8,38 +8,35 @@ Mede 3 KPIs para os membros ativos do squad **Raccoons** usando dados do **Linea
 
 ---
 
-## A rotina do ícone "KPI Dashboard" (o "portal")
-
-Quando o ícone do desktop é clicado, o seguinte acontece:
+## Como o dashboard é servido
 
 ```
-KPI Dashboard.lnk          (atalho Windows)
-       │
-       ▼
-kpi_publish.bat            (scripts/kpi/kpi_publish.bat)
-       │
-       ▼
-pythonw kpi_tray.py        (system tray icon — sem janela CMD)
-       │
-       ├── HTTP server local porta 8080  → http://localhost:8080/KPI_DASHBOARD.html
-       ├── ngrok tunnel público           → https://<seu-subdominio>.ngrok-free.dev/KPI_DASHBOARD.html
-       └── Auto-refresh weekdays 09:00   (puxa Linear API + rebuild)
+GitHub (main)
+     │   push / merge
+     ▼
+GitHub Actions (.github/workflows/deploy.yml)
+     │   SSH → ec2-user@<EC2_HOST>
+     ▼
+deploy/deploy.sh            (idempotent: pull, deps, restart units)
+     │
+     ▼
+EC2 (Amazon Linux 2023)
+     ├── nginx :80                          ──────────►  http://<ec2-ip>/KPI_DASHBOARD.html
+     │       proxies all traffic to ↓
+     ├── tsa-kpi.service                     (serve_kpi.py @ 127.0.0.1:8787)
+     │       serves /, /KPI_DASHBOARD.html, POST /refresh
+     └── tsa-kpi-refresh.timer               (weekdays 12:00 UTC = 09:00 BRT)
+             ↓
+         tsa-kpi-refresh.service             (orchestrate.py — full pipeline)
+             ↓
+         /opt/tsa-kpi/output/KPI_DASHBOARD.html
 ```
 
-O tray icon expõe um menu:
-
-```
-Open Dashboard                    ← abre URL ngrok
-Open Local                        ← abre localhost:8080
-─────────────────
-Refresh & Rebuild (Linear API)    ← pipeline completo (~35s)
-Quick Rebuild (cached data)       ← só rebuild do HTML (<1s)
-─────────────────
-Last refresh: HH:MM              ← timestamp dinâmico
-HTTP: OK  |  ngrok: OK           ← status ao vivo
-─────────────────
-Exit
-```
+Ciclo completo:
+1. Push para `main` no GitHub.
+2. GHA conecta via SSH na EC2 e roda `deploy/deploy.sh`.
+3. Script faz `git pull`, atualiza deps, recopia units, faz `daemon-reload`, reinicia o servidor HTTP, dispara um rebuild one-shot.
+4. Timer continua rodando o pipeline diariamente em background.
 
 ---
 
@@ -61,7 +58,7 @@ Step 3: normalize_data.py
         ↓
 Step 4: build_html_dashboard.py
     Gera HTML self-contained (~2800 linhas, ~1MB)
-    Output: ~/Downloads/KPI_DASHBOARD.html
+    Output: $KPI_OUTPUT_DIR/KPI_DASHBOARD.html (default ~/Downloads)
         ↓
 Step 5 (opcional): upload_dashboard_drive.py
     Upload para Google Drive
@@ -81,88 +78,123 @@ KPIs usam apenas tickets **External** (clientes reais). Internal é excluído vi
 
 ---
 
-## Instalação (Windows)
+## Desenvolvimento local (qualquer SO)
 
-### Pré-requisitos
-- **Python 3.10+** com `pythonw.exe` no `PATH` (instalador oficial: marcar "Add Python to PATH")
-- **ngrok** ([download](https://ngrok.com/download)) com subdomínio reservado (free tier OK)
-- **LINEAR_API_KEY** ([Linear Settings → API → Personal API keys](https://linear.app/settings/api))
+Pré-requisitos: Python 3.10+, `git`. **LINEAR_API_KEY** é opcional — sem ela, use `--build-only` com os dados commitados.
 
-### Setup
-```powershell
-# 1. Clone
+```bash
 git clone https://github.com/thiagotbx123/tsa-kpi-dashboard.git
 cd tsa-kpi-dashboard
 
-# 2. Dependências Python
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r scripts/kpi/requirements.txt
 
-# 3. Variáveis de ambiente
-copy .env.example .env
-# Edite .env e preencha LINEAR_API_KEY (e opcionalmente Google Drive / ngrok)
+cp .env.example .env               # opcional, se for rodar pipeline completo
+# edite .env e preencha LINEAR_API_KEY
 
-# 4. Build inicial (sem precisar de API key, usa dados commitados)
+# Rebuild rápido a partir do cache commitado:
 python scripts/kpi/orchestrate.py --build-only
 
-# 5. Abrir o dashboard
-start "" "%USERPROFILE%\Downloads\KPI_DASHBOARD.html"
+# Preview no navegador (http://localhost:8787):
+python scripts/kpi/serve_kpi.py
 ```
 
-### Atalho de desktop (opcional)
-1. Botão direito no Desktop → Novo → Atalho
-2. Local: `<repo>\scripts\kpi\kpi_publish.bat`
-3. Ícone: `<repo>\scripts\kpi\kpi_dashboard.ico`
-4. Propriedades → Executar: **Minimizada** (evita flash de CMD)
+### Comandos úteis
 
-Duplo-clique → tray icon aparece, dashboard servido em http://localhost:8080.
+```bash
+# Pipeline completo (precisa LINEAR_API_KEY)
+python scripts/kpi/orchestrate.py
+
+# Pular refresh da API (usar cache)
+python scripts/kpi/orchestrate.py --skip-refresh
+
+# Steps individuais
+python scripts/kpi/refresh_linear_cache.py     # 1. Linear API
+python scripts/kpi/merge_opossum_data.py        # 2. Merge
+python scripts/kpi/normalize_data.py            # 3. Normaliza
+python scripts/kpi/build_html_dashboard.py      # 4. Gera HTML
+python scripts/kpi/upload_dashboard_drive.py    # 5. Upload Drive (opcional)
+
+# XLSX executivo
+python scripts/kpi/build_waki_dashboard.py
+
+# Testes
+pytest scripts/kpi/tests/test_kpi_calculations.py
+```
 
 ---
 
-## Como rodar
+## Deploy em produção (EC2)
 
-### Pipeline completo (precisa LINEAR_API_KEY)
+A app vive em uma EC2 t3.micro (Amazon Linux 2023). Deploy é automatizado via GitHub Actions a cada merge em `main`. Bootstrap inicial é manual (uma vez).
+
+### Bootstrap (uma vez por máquina)
+
+SSH na EC2 e rode o instalador:
 ```bash
-python scripts/kpi/orchestrate.py
+ssh -i ~/.ssh/kpi-app-key.pem ec2-user@<ec2-public-ip>
+sudo dnf install -y git
+sudo git clone https://github.com/thiagotbx123/tsa-kpi-dashboard.git /opt/tsa-kpi
+bash /opt/tsa-kpi/deploy/install.sh
 ```
 
-### Pular refresh da API (usar cache)
+O script `install.sh`:
+- Instala `nginx`, `python3`, `python3-pip`, `git`
+- Cria venv em `/opt/tsa-kpi/.venv`, instala deps
+- Copia systemd units (`tsa-kpi.service`, `tsa-kpi-refresh.service`, `tsa-kpi-refresh.timer`)
+- Copia config do nginx (`/etc/nginx/conf.d/tsa-kpi.conf`)
+- Faz build inicial com dados cacheados
+
+Depois adicione a API key e habilite os services:
 ```bash
-python scripts/kpi/orchestrate.py --skip-refresh
+sudo -u ec2-user tee /opt/tsa-kpi/.env <<'EOF'
+LINEAR_API_KEY=lin_api_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+EOF
+sudo chmod 600 /opt/tsa-kpi/.env
+
+sudo systemctl enable --now tsa-kpi.service
+sudo systemctl enable --now tsa-kpi-refresh.timer
 ```
 
-### Só rebuild do HTML (mais rápido)
+Verifique:
 ```bash
-python scripts/kpi/orchestrate.py --build-only
+sudo systemctl status tsa-kpi.service
+sudo systemctl list-timers tsa-kpi-refresh.timer
+curl -I http://localhost/KPI_DASHBOARD.html
 ```
 
-### Steps individuais
-```bash
-python scripts/kpi/refresh_linear_cache.py    # 1. Puxa Linear API
-python scripts/kpi/merge_opossum_data.py       # 2. Merge dados
-python scripts/kpi/normalize_data.py           # 3. Normaliza
-python scripts/kpi/build_html_dashboard.py     # 4. Gera HTML
-python scripts/kpi/upload_dashboard_drive.py   # 5. Upload Drive (opcional)
-```
+Dashboard fica acessível em `http://<ec2-public-ip>/KPI_DASHBOARD.html`.
 
-### XLSX executivo
-```bash
-python scripts/kpi/build_waki_dashboard.py
-# Output: ~/Downloads/RACCOONS_KPI_DASHBOARD_v2.xlsx
-```
+### GitHub Actions secrets
 
-### Preview local sem tray
-```bash
-python scripts/kpi/serve_kpi.py                # http://localhost:8787
-```
+Em `Settings → Secrets and variables → Actions`, adicione:
 
-### System tray (server + ngrok)
-```bash
-python scripts/kpi/kpi_tray.py
-```
+| Secret | Valor |
+|--------|-------|
+| `EC2_HOST` | IP público (ou hostname) da EC2 |
+| `EC2_USER` | `ec2-user` |
+| `EC2_SSH_KEY` | Conteúdo da chave privada `kpi-app-key.pem` (toda a chave incluindo `-----BEGIN/END-----`) |
 
-### Testes
+A partir do próximo merge em `main`, o workflow `Deploy to EC2` faz: SSH → roda `deploy/deploy.sh` → rebuild → restart.
+
+### Troubleshooting
+
 ```bash
-pytest scripts/kpi/tests/test_kpi_calculations.py
+# Logs do server
+sudo journalctl -u tsa-kpi.service -f
+
+# Logs do refresh
+sudo journalctl -u tsa-kpi-refresh.service -n 200
+
+# Disparar refresh manual
+sudo systemctl start tsa-kpi-refresh.service
+
+# Validar config nginx
+sudo nginx -t
+
+# Próxima execução agendada
+sudo systemctl list-timers tsa-kpi-refresh.timer
 ```
 
 ---
@@ -171,9 +203,18 @@ pytest scripts/kpi/tests/test_kpi_calculations.py
 
 ```
 tsa-kpi-dashboard/
-├── README.md                       ← este arquivo
-├── .env.example                    ← template de credenciais
+├── README.md
+├── .env.example
 ├── .gitignore
+├── .github/workflows/
+│   └── deploy.yml                  ← GHA: SSH deploy on merge to main
+├── deploy/
+│   ├── install.sh                  ← bootstrap one-time na EC2
+│   ├── deploy.sh                   ← chamado pelo GHA a cada deploy
+│   ├── nginx.conf                  ← reverse proxy 80 → 8787
+│   ├── tsa-kpi.service             ← systemd: serve_kpi.py
+│   ├── tsa-kpi-refresh.service     ← systemd: orchestrate.py (one-shot)
+│   └── tsa-kpi-refresh.timer       ← systemd: weekdays 12:00 UTC
 ├── scripts/
 │   ├── _kpi_all_members.json       ← cache Linear (regenerável)
 │   ├── _dashboard_data.json        ← dataset merged
@@ -188,19 +229,13 @@ tsa-kpi-dashboard/
 │       ├── upload_dashboard_drive.py ← Step 5
 │       ├── build_waki_dashboard.py ← XLSX alternativo
 │       ├── team_config.py          ← SINGLE SOURCE OF TRUTH dos membros
-│       ├── serve_kpi.py            ← HTTP server standalone
-│       ├── kpi_tray.py             ← system tray + ngrok
-│       ├── kpi_publish.bat         ← shortcut Windows (portável)
-│       ├── kpi_dashboard.ico       ← ícone customizado
+│       ├── serve_kpi.py            ← HTTP server (porta 8787)
 │       ├── requirements.txt
 │       ├── CLAUDE.md               ← documentação técnica completa
 │       ├── KPI_PLAYBOOK_FOR_CODA.md ← playbook publicado no Coda
 │       ├── tests/
 │       │   └── test_kpi_calculations.py
-│       └── variants/               ← 10 variações de visualização
-│           ├── build_v1_executive.py
-│           ├── build_v2_radar.py
-│           └── ... (v3-v10)
+│       └── variants/               ← 10 variações de visualização (build_v1..v10.py)
 ```
 
 ---
@@ -236,6 +271,7 @@ Edite `scripts/kpi/team_config.py` para alterar o roster — esse arquivo é a *
 | Custom week calc (W1=1-7) | Alinhado com formato do time, NÃO ISO week |
 | Rework = label-only | Histórico Done→In Progress dava false positives (fix 2026-04-13) |
 | Default segment = ALL, KPIs = External-only | `getKPIFiltered()` separa audit table de KPIs (fix 2026-04-16) |
+| Deploy: GHA SSH → systemd | Sem dependências de laptops; 1 servidor; rebuild diário automatizado |
 
 ---
 
@@ -244,7 +280,7 @@ Edite `scripts/kpi/team_config.py` para alterar o roster — esse arquivo é a *
 1. **Thais: Low KPI Measurability** — 79% das issues sem `dueDate` no Linear
 2. **Spreadsheet Date Anomalies** — ~13 outliers (2019, durações negativas) mantidos
 3. **KPI 3 (Reliability)** — não ativo até labels de rework serem adotadas no Linear
-4. **ngrok URL hardcoded como fallback** — pendente mover 100% para `.env` (F-A07-02)
+4. **HTTPS** — v1 serve apenas HTTP. Adicionar Let's Encrypt + domínio quando disponível.
 5. **Audit findings pendentes** — 12 itens documentados em `scripts/kpi/CLAUDE.md`
 
 ---
