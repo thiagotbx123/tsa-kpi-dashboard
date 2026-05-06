@@ -1,0 +1,200 @@
+[
+  {
+    "customer": "Dixa",
+    "dealSigned": "Feb/22",
+    "kickoff": "Mar/22",
+    "goLive": "Jul/22",
+    "status": "maintenance",
+    "srcDeal": "Slack #external-testbox-dixa: channel created ~Feb 2022",
+    "srcKickoff": "Slack #external-testbox-dixa: Sam G2 partnership message Mar 7 2022",
+    "srcGoLive": "Slack: Dixa AEs actively creating trials for prospects by mid-2022",
+    "milestones": "Dec/24: Full dataset rebuild with new data stories and enablement session for the Dixa sales team (~2 weeks)"
+  },
+  {
+    "customer": "Syncari",
+    "dealSigned": "Feb/23",
+    "kickoff": "Mar/23",
+    "goLive": null,
+    "status": "interrupted",
+    "srcDeal": "Slack #gtm-collab: Isabella confirmed signed by Feb 22 2023",
+    "srcKickoff": "Slack #taqueria: Nora taco for kickoff Mar 1 2023",
+    "srcGoLive": null,
+    "milestones": null
+  },
+  {
+    "customer": "Assignar",
+    "dealSigned": "Jun/23",
+    "kickoff": "Jun/23",
+    "goLive": "Jul/23",
+    "status": "maintenance",
+    "srcDeal": "Slack: 2yr renewal May 2024 confirms original deal ~Jun 2023",
+    "srcKickoff": "Slack: Implementation kicked off mid-Jun 2023",
+    "srcGoLive": "Slack #external-testbox-assignar: AEs creating trials from Jul 2023",
+    "milestones": null
+  },
+  {
+    "customer": "CallRail",
+    "dealSigned": "Jun/23",
+    "kickoff": "Jun/23",
+    "goLive": "Dec/23",
+    "status": "maintenance",
+    "srcDeal": "Slack #external-testbox-callrail: Isabella met Amanda Jun 19 2023",
+    "srcKickoff": "Slack #gtm-collab: Isabella kickoff deck Jun 20 2023",
+    "srcGoLive": "Slack: 83 users + 5 verticals active by Q4 2023. NoFrame migration Mar 2026",
+    "milestones": "Mar/26: NoFrame migration (~3 weeks) — rebuilt entire platform from legacy iframe/proxy architecture to new Chrome extension model. 83 users migrated across 5 demo verticals (Automotive, Healthcare, Home Services, Legal, Real Estate)"
+  },
+  {
+    "customer": "Gong",
+    "dealSigned": "Dec/23",
+    "kickoff": "Jan/24",
+    "goLive": "Jun/24",
+    "status": "live",
+    "srcDeal": "Slack #go-to-market: Sam scoping 15 eng weeks Dec 12 2023",
+    "srcKickoff": "Slack #taqueria: Adil taco — Gong Kickoff Jan 9 2024",
+    "srcGoLive": "Slack #team-koala: Nora confirmed prod ready Jun 2024. Rohan interview confirms",
+    "milestones": "Mar/26: Gong Partners (~4 weeks) — spun up an entirely new product environment for Gong partner ecosystem | Dynamics CRM integration (~6 weeks) — built new demo environment for Microsoft Dynamics alongside existing Salesforce setup"
+  },
+  {
+    "customer": "Brevo",
+    "dealSigned": "Apr/24",
+    "kickoff": "Apr/24",
+    "goLive": "Jun/24",
+    "status": "live",
+    "srcDeal": "Slack #gtm-collab: Adil Solution Design Kickoff scheduling Apr 9 2024",
+    "srcKickoff": "Slack #gtm-collab: Nora ramping for kickoff Apr 30 2024",
+    "srcGoLive": "Slack #team-dingo: Deyton confirmed Brevo live Jun 20 2024. Phase 1 soft launch",
+    "milestones": "May/25: German environment (~3 weeks) — 3rd localized demo after English and French, full dataset + sandbox in German | Mar/26: Brevo Professional (~ongoing) — new tier environment being built from scratch for enterprise segment"
+  },
+  {
+    "customer": "QuickBooks",
+    "dealSigned": "Feb/24",
+    "kickoff": "Apr/24",
+    "goLive": "Jul/24",
+    "status": "live",
+    "srcDeal": "Slack #testbox-team: Danny announced deal Feb 13 2024",
+    "srcKickoff": "Slack #dev + #gtm-collab: Nora official kickoff Apr 16 2024",
+    "srcGoLive": "Slack #intuit-internal: User onboarding started Jul 9 2024",
+    "milestones": "Sep/25: Canada launch (~4 weeks) — built entirely new demo environment for Canadian market with localized data | Sep/25: TCO Construction 8-entity (~6 weeks) — new vertical with 8 intercompany entities, full data ingestion from scratch | Nov/25: Fall Release (~3 weeks) — 38 new features shipped across all environments | Feb/26: Winter Release 2026 (~ongoing) — multi-vertical expansion with construction dataset refresh"
+  },
+  {
+    "customer": "Tropic",
+    "dealSigned": "Jun/24",
+    "kickoff": "Jun/24",
+    "goLive": "Nov/24",
+    "status": "live",
+    "srcDeal": "Slack #testbox-team: Danny — Tropic officially a customer Jun 7 2024",
+    "srcKickoff": "Linear: Project start Jun 17 2024",
+    "srcGoLive": "Slack: James — SolCon launch Nov 5 2024",
+    "milestones": null
+  },
+  {
+    "customer": "Apollo",
+    "dealSigned": "Dec/23",
+    "kickoff": "Jan/25",
+    "goLive": "Apr/25",
+    "status": "live",
+    "srcDeal": "Slack #testbox-team: Danny closed deal Dec 31 2023",
+    "srcKickoff": "Slack #proj-noframing: Kevin confirmed re-implementation started Jan 14 2025",
+    "srcGoLive": "Slack #external-testbox-apollo: Waki — V2 reimplementation launched Apr 23 2025. Scott confirmed 90% weekly usage by Jun",
+    "milestones": "V1: Jan-Apr/24 (3mo) — original shared-account implementation, live Apr 2024. Renewal Nov/24 with 7% increase triggered V2 rebuild | V2: Jan-Apr/25 (4mo) — full reimplementation with individual user accounts, Chrome extension, CI. 200+ users"
+  },
+  {
+    "customer": "Onyx",
+    "dealSigned": "Sep/24",
+    "kickoff": "Oct/24",
+    "goLive": null,
+    "status": "stalled",
+    "srcDeal": "Slack: Bryan Donow (VP Technology) signed contract ~Sep 2024",
+    "srcKickoff": "Slack #external-testbox-onyx: Ryan first weekly sync Oct 3 2024",
+    "srcGoLive": null,
+    "milestones": null
+  },
+  {
+    "customer": "People.ai",
+    "dealSigned": "Aug/24",
+    "kickoff": "Aug/24",
+    "goLive": "Nov/24",
+    "status": "maintenance",
+    "srcDeal": "Slack: Contract signed mid-2024 after long CFO negotiation",
+    "srcKickoff": "Slack: Mike Solution Delivery Readout — eng work started Aug 5 2024",
+    "srcGoLive": "Slack #people-ai-internal: Kevin — seller enablement Oct 30. CEO demoed to Verizon Nov 14 2024",
+    "milestones": null
+  },
+  {
+    "customer": "Tabs",
+    "dealSigned": "Feb/25",
+    "kickoff": "Feb/25",
+    "goLive": "May/25",
+    "status": "live",
+    "srcDeal": "Slack #go-to-market: Danny intro/kickoff planning Feb 18 2025",
+    "srcKickoff": "Fathom recording: Tabs Implementation Kick-Off Feb 25 2025",
+    "srcGoLive": "Slack #tabs-internal: Diego confirmed go-live May 5 2025",
+    "milestones": null
+  },
+  {
+    "customer": "Archer",
+    "dealSigned": "Apr/25",
+    "kickoff": "Apr/25",
+    "goLive": null,
+    "status": "in_progress",
+    "srcDeal": "Slack #solutions_gsd: Sam kickoff planning Oct 2024",
+    "srcKickoff": "Slack #taqueria: Leonardo taco — Archer kickoff Apr 7 2025",
+    "srcGoLive": null,
+    "milestones": "Apr-Jun/25: Enterprise + Third Party + Risk Recon delivered (3mo active build) | Jul-Sep/25: Gap — iframe dead-end + SA transition Ryan to Josh (~3mo idle) | Oct/25-present: Data gen with Thais/Gabrielle. Resilience 7%, Audit 0%. Contract renegotiation ongoing"
+  },
+  {
+    "customer": "Gainsight",
+    "dealSigned": "Mar/25",
+    "kickoff": "Apr/25",
+    "goLive": "Sep/25",
+    "status": "live",
+    "srcDeal": "Slack #gainsight-internal: Sam pre-kickoff prep early 2025",
+    "srcKickoff": "Slack #external-testbox-gainsight: Chris kickoff call Apr 28 2025",
+    "srcGoLive": "Slack #external-testbox-gainsight: Emails go-live ~Sep 2 2025 for hero + 140 accounts",
+    "milestones": "Sep/25: Go-live emails only for 5 hero accounts + 140 generic accounts (5mo) | Nov/25: Support tickets delivered | Mar/26: Meetings finally working after SFDC security incident Dec/25 and VP Eng friction. JP expansion + 4 new products planned"
+  },
+  {
+    "customer": "Siteimprove",
+    "dealSigned": "Sep/25",
+    "kickoff": "Dec/25",
+    "goLive": "Mar/26",
+    "status": "live",
+    "srcDeal": "Slack #gtm-collab: Waki SOW expectations set Aug 29 2025",
+    "srcKickoff": "Carlos confirmed: TSA onboarding started Dec 2025",
+    "srcGoLive": "Slack #siteimprove-internal: Carlos announced launch Mar 18 2026",
+    "milestones": null
+  },
+  {
+    "customer": "Mailchimp",
+    "dealSigned": "Jan/26",
+    "kickoff": "Dec/25",
+    "goLive": "Mar/26",
+    "status": "live",
+    "srcDeal": "Slack #taqueria: Sam — Mailchimp officially signed Jan 7 2026",
+    "srcKickoff": "Slack #mailchimp-internal: Kat — kickoff call Dec 2 2025",
+    "srcGoLive": "Go-live Mar 2026. Confirmed by Thiago",
+    "milestones": null
+  },
+  {
+    "customer": "Gem",
+    "dealSigned": "Jan/26",
+    "kickoff": "Feb/26",
+    "goLive": null,
+    "status": "in_progress",
+    "srcDeal": "SOW document: Gem ATS-Only SOW signed Jan 30 2026",
+    "srcKickoff": "Slack: Diego — customer kickoff call Feb 9 2026",
+    "srcGoLive": null,
+    "milestones": null
+  },
+  {
+    "customer": "WFS",
+    "dealSigned": "Mar/26",
+    "kickoff": null,
+    "goLive": null,
+    "status": "starting",
+    "srcDeal": "Slack #intuit-internal: Alexandra — order signed Mar 17 2026",
+    "srcKickoff": null,
+    "srcGoLive": null,
+    "milestones": null
+  }
+]

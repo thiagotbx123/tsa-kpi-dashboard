@@ -1,0 +1,1883 @@
+{
+  "generated_at": "2026-04-17T19:31:59.293393+00:00",
+  "date": "2026-04-17",
+  "total_buckets": 28,
+  "by_status": {
+    "red": 2,
+    "yellow": 3,
+    "green": 18,
+    "done": 5
+  },
+  "buckets": [
+    {
+      "tsa_id": "19b6975e-3026-450b-bc01-f468ad543028",
+      "tsa_name": "Alexandra Lacerda",
+      "project": "QBO",
+      "milestone": null,
+      "unit": "project",
+      "impact": "QuickBooks demo fidelity — affects buyer conversion in Intuit pipeline.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 75,
+        "open": 4,
+        "closed": 71,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": "2026-04-24",
+        "state_counts": {
+          "In Progress": 2,
+          "Backlog": 2
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-766",
+          "title": "QBO - Start first round of Spring Release feature validation related to WFS",
+          "url": "https://linear.app/testbox/issue/RAC-766/qbo-start-first-round-of-spring-release-feature-validation-related-to",
+          "status": "In Progress",
+          "dueDate": "2026-04-24",
+          "updatedAt": "2026-04-15T13:31:45.202Z",
+          "labels": [
+            "Improvement",
+            "QBO",
+            "External"
+          ]
+        },
+        {
+          "id": "RAC-725",
+          "title": "[QBO] Spring Release FY26",
+          "url": "https://linear.app/testbox/issue/RAC-725/qbo-spring-release-fy26",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-04-15T13:31:45.202Z",
+          "labels": [
+            "Strategic",
+            "QBO",
+            "External"
+          ]
+        },
+        {
+          "id": "RAC-699",
+          "title": "[QBO] Intuit Accountant Suite",
+          "url": "https://linear.app/testbox/issue/RAC-699/qbo-intuit-accountant-suite",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-04-06T19:44:17.027Z",
+          "labels": [
+            "Strategic",
+            "QBO",
+            "External"
+          ]
+        },
+        {
+          "id": "RAC-298",
+          "title": "[QBO] Environment Improvements & Risk Reduction",
+          "url": "https://linear.app/testbox/issue/RAC-298/qbo-environment-improvements-and-risk-reduction",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-23T14:57:00.080Z",
+          "labels": [
+            "Improvement",
+            "QBO",
+            "External"
+          ]
+        }
+      ],
+      "recent_done": [
+        {
+          "id": "RAC-756",
+          "title": "QBO - Support Intuit on new user creation in Testbox App for access to QuickBooks demos and environments",
+          "completedAt": "2026-04-14T02:01:01.208Z"
+        },
+        {
+          "id": "RAC-755",
+          "title": "QBO - Review Action Plan draft shared in Intuit internal channel and add comments and questions",
+          "completedAt": "2026-04-14T02:00:59.565Z"
+        },
+        {
+          "id": "RAC-752",
+          "title": "QBO - Second round of WIS tracker validation with updated information (click path and OOTB)",
+          "completedAt": "2026-04-15T13:22:06.768Z"
+        },
+        {
+          "id": "RAC-736",
+          "title": "QBO - Prepare a status update for all QBO projects: next steps, deliverables and ongoing activities for the internal channel",
+          "completedAt": "2026-04-06T23:37:58.845Z"
+        },
+        {
+          "id": "RAC-731",
+          "title": "QBO - Prepare the first version of the Effort tracker for the Spring release with the information we have so far",
+          "completedAt": "2026-04-09T12:34:56.890Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "19b6975e-3026-450b-bc01-f468ad543028",
+      "tsa_name": "Alexandra Lacerda",
+      "project": "[WFS] Workforce Solutions",
+      "milestone": null,
+      "unit": "project",
+      "impact": "Intuit WFS deal — SOW lock gates $55K+ ARR implementation.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 28,
+        "open": 2,
+        "closed": 26,
+        "overdue": 0,
+        "soon": 1,
+        "earliest_due": "2026-04-17",
+        "state_counts": {
+          "In Progress": 1,
+          "Backlog": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-753",
+          "title": "WFS - Refine tickets created with Engineering for unlocked stories",
+          "url": "https://linear.app/testbox/issue/RAC-753/wfs-refine-tickets-created-with-engineering-for-unlocked-stories",
+          "status": "In Progress",
+          "dueDate": "2026-04-17",
+          "updatedAt": "2026-04-17T03:45:06.333Z",
+          "labels": [
+            "Improvement",
+            "WFS",
+            "External"
+          ]
+        },
+        {
+          "id": "RAC-707",
+          "title": "[WFS] Implementation",
+          "url": "https://linear.app/testbox/issue/RAC-707/wfs-implementation",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-04-15T13:31:46.720Z",
+          "labels": [
+            "Strategic",
+            "WFS",
+            "External"
+          ]
+        }
+      ],
+      "recent_done": [
+        {
+          "id": "RAC-768",
+          "title": "WFS - Prepare and organize project status for internal sharing",
+          "completedAt": "2026-04-16T19:44:27.703Z"
+        },
+        {
+          "id": "RAC-767",
+          "title": "WFS - Validate CSVs generated by Engineering for Story #4 data ingestion",
+          "completedAt": "2026-04-15T13:31:46.900Z"
+        },
+        {
+          "id": "RAC-757",
+          "title": "WFS - Organize open questions about story building to share with Intuit",
+          "completedAt": "2026-04-15T21:13:26.382Z"
+        },
+        {
+          "id": "RAC-754",
+          "title": "WFS - Prepare implementation progress report for Intuit: story status, development activities and next steps",
+          "completedAt": "2026-04-15T13:22:20.383Z"
+        },
+        {
+          "id": "RAC-733",
+          "title": "WFS - Discovery and documentation of newly enabled features and their GoCo integrations",
+          "completedAt": "2026-04-06T23:38:24.367Z"
+        },
+        {
+          "id": "RAC-732",
+          "title": "WFS - Mineral HR discovery and questions output",
+          "completedAt": "2026-04-09T12:35:00.083Z"
+        },
+        {
+          "id": "RAC-730",
+          "title": "WFS - Create technical questions document to send to Intuit WFS team",
+          "completedAt": "2026-04-06T23:38:11.240Z"
+        },
+        {
+          "id": "RAC-710",
+          "title": "WFS - Create the implementation tickets for the unblocked stories (Beta Phase) on Linear",
+          "completedAt": "2026-04-10T23:28:40.083Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "19b6975e-3026-450b-bc01-f468ad543028",
+      "tsa_name": "Alexandra Lacerda",
+      "project": "(no project)",
+      "milestone": null,
+      "unit": "project",
+      "impact": "(no project) project health.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 3,
+        "open": 1,
+        "closed": 2,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Backlog": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-735",
+          "title": "QBO - First discovery of Intuit Accountant Suite — output questions, assess project difficulty level, and identify required documents from Intuit",
+          "url": "https://linear.app/testbox/issue/RAC-735/qbo-first-discovery-of-intuit-accountant-suite-output-questions-assess",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-04-06T19:44:17.027Z",
+          "labels": [
+            "External",
+            "QBO",
+            "Strategic"
+          ]
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "19b6975e-3026-450b-bc01-f468ad543028",
+      "tsa_name": "Alexandra Lacerda",
+      "project": "[Internal] TSA Operations",
+      "milestone": null,
+      "unit": "project",
+      "impact": "TSA ops enablement — dashboards, automation, knowledge systems.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 3,
+        "open": 1,
+        "closed": 2,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Backlog": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-706",
+          "title": "[Internal] Documentation Improvement Initiative",
+          "url": "https://linear.app/testbox/issue/RAC-706/internal-documentation-improvement-initiative",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-03-30T14:09:49.478Z",
+          "labels": [
+            "Strategic",
+            "Internal"
+          ]
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "b13ca864-e0f4-4ff6-b020-ec3f4491643e",
+      "tsa_name": "Carlos Guilherme Matos de Almeida da Silva",
+      "project": "Gong",
+      "milestone": null,
+      "unit": "project",
+      "impact": "Gong customer retention — blocks sandbox self-service for sales team.",
+      "status": "red",
+      "reasons": [
+        "2 overdue (-28d worst)"
+      ],
+      "metrics": {
+        "total": 88,
+        "open": 12,
+        "closed": 76,
+        "overdue": 2,
+        "soon": 1,
+        "earliest_due": "2026-03-20",
+        "state_counts": {
+          "Todo": 1,
+          "In Progress": 4,
+          "Paused": 7
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-747",
+          "title": "Gong - Create a new release of the dataset with all the content from the new financial story",
+          "url": "https://linear.app/testbox/issue/RAC-747/gong-create-a-new-release-of-the-dataset-with-all-the-content-from-the",
+          "status": "Todo",
+          "dueDate": "2026-04-17",
+          "updatedAt": "2026-04-17T03:45:07.396Z",
+          "labels": [
+            "Gong",
+            "ingestion"
+          ]
+        },
+        {
+          "id": "RAC-744",
+          "title": "Gong - Financial Story First Ingestion",
+          "url": "https://linear.app/testbox/issue/RAC-744/gong-financial-story-first-ingestion",
+          "status": "In Progress",
+          "dueDate": "2026-04-16",
+          "updatedAt": "2026-04-16T03:05:05.396Z",
+          "labels": [
+            "ingestion",
+            "Gong"
+          ]
+        },
+        {
+          "id": "RAC-425",
+          "title": "Create Slack Workflow to deliver Sandbox accounts credentials",
+          "url": "https://linear.app/testbox/issue/RAC-425/create-slack-workflow-to-deliver-sandbox-accounts-credentials",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-04-13T15:40:31.378Z",
+          "labels": [
+            "Improvement",
+            "Gong",
+            "External",
+            "Sandbox"
+          ]
+        },
+        {
+          "id": "RAC-421",
+          "title": "Gong - Create the Story generation framework for the New Gong demo story",
+          "url": "https://linear.app/testbox/issue/RAC-421/gong-create-the-story-generation-framework-for-the-new-gong-demo-story",
+          "status": "In Progress",
+          "dueDate": "2026-04-24",
+          "updatedAt": "2026-03-24T15:15:01.728Z",
+          "labels": [
+            "Data Gen.",
+            "Gong",
+            "External",
+            "Demo",
+            "Sandbox"
+          ]
+        },
+        {
+          "id": "RAC-398",
+          "title": "Update the Forecast column named \"Commit\" to \"Forecast\"",
+          "url": "https://linear.app/testbox/issue/RAC-398/update-the-forecast-column-named-commit-to-forecast",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-04-13T12:20:42.346Z",
+          "labels": [
+            "Improvement",
+            "Gong",
+            "External",
+            "Demo"
+          ]
+        },
+        {
+          "id": "RAC-395",
+          "title": "Fix the Deals Analytics Accuracy Page",
+          "url": "https://linear.app/testbox/issue/RAC-395/fix-the-deals-analytics-accuracy-page",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-04-13T15:42:07.666Z",
+          "labels": [
+            "Improvement",
+            "Gong",
+            "External",
+            "Demo",
+            "Sandbox"
+          ]
+        },
+        {
+          "id": "RAC-376",
+          "title": "AI Builder",
+          "url": "https://linear.app/testbox/issue/RAC-376/ai-builder",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-04-13T15:38:00.605Z",
+          "labels": [
+            "Maintenance",
+            "Gong",
+            "External",
+            "Sandbox"
+          ]
+        },
+        {
+          "id": "RAC-374",
+          "title": "Automate the entire Hubspot Gong account creation",
+          "url": "https://linear.app/testbox/issue/RAC-374/automate-the-entire-hubspot-gong-account-creation",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-04-13T15:44:54.018Z",
+          "labels": [
+            "Maintenance",
+            "Gong",
+            "External",
+            "Sandbox"
+          ]
+        },
+        {
+          "id": "RAC-372",
+          "title": "Automate the MEDDICC AI trackers for Hubspot accounts",
+          "url": "https://linear.app/testbox/issue/RAC-372/automate-the-meddicc-ai-trackers-for-hubspot-accounts",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-04-13T15:45:53.732Z",
+          "labels": [
+            "Maintenance",
+            "Gong",
+            "External",
+            "Sandbox"
+          ]
+        },
+        {
+          "id": "RAC-356",
+          "title": "Gong - Story Framework & New Initiatives",
+          "url": "https://linear.app/testbox/issue/RAC-356/gong-story-framework-and-new-initiatives",
+          "status": "In Progress",
+          "dueDate": "2026-04-24",
+          "updatedAt": "2026-03-24T15:15:21.856Z",
+          "labels": [
+            "Gong",
+            "External"
+          ]
+        },
+        {
+          "id": "RAC-352",
+          "title": "Gong - Deals & Forecast",
+          "url": "https://linear.app/testbox/issue/RAC-352/gong-deals-and-forecast",
+          "status": "In Progress",
+          "dueDate": "2026-03-20",
+          "updatedAt": "2026-03-24T15:16:17.424Z",
+          "labels": [
+            "Gong",
+            "External"
+          ]
+        },
+        {
+          "id": "RAC-350",
+          "title": "Gong - Sandbox Development & Provisioning",
+          "url": "https://linear.app/testbox/issue/RAC-350/gong-sandbox-development-and-provisioning",
+          "status": "Paused",
+          "dueDate": "2026-04-30",
+          "updatedAt": "2026-04-15T14:12:03.282Z",
+          "labels": [
+            "Gong",
+            "External"
+          ]
+        }
+      ],
+      "recent_done": [
+        {
+          "id": "RAC-751",
+          "title": "Gong - Make the updates to the Slack App and Create the diagrams",
+          "completedAt": "2026-04-15T14:13:36.400Z"
+        },
+        {
+          "id": "RAC-749",
+          "title": "Gong - Validate the ingestion of the account and fix issues",
+          "completedAt": "2026-04-17T11:11:04.412Z"
+        },
+        {
+          "id": "RAC-748",
+          "title": "Gong - Run the state machine steps against the dev account chose for the financial story",
+          "completedAt": "2026-04-17T11:11:53.020Z"
+        },
+        {
+          "id": "RAC-746",
+          "title": "Gong - Ingest SQL files on Unstable",
+          "completedAt": "2026-04-15T16:10:23.637Z"
+        },
+        {
+          "id": "RAC-745",
+          "title": "Gong - Align Ingestion Strategy with the Enginnering team",
+          "completedAt": "2026-04-13T16:01:13.078Z"
+        },
+        {
+          "id": "RAC-714",
+          "title": "Gong - Check all gong tables that doesn't have a dataset column and implement a dataset column for the existing rows",
+          "completedAt": "2026-04-08T20:27:25.328Z"
+        },
+        {
+          "id": "RAC-713",
+          "title": "Gong - Check all dataset types in the Gong tables and remove the ones that are not used anymore.",
+          "completedAt": "2026-04-08T14:00:18.034Z"
+        },
+        {
+          "id": "RAC-712",
+          "title": "Gong - Dataset migration to the new format",
+          "completedAt": "2026-04-08T20:29:06.130Z"
+        },
+        {
+          "id": "RAC-351",
+          "title": "Gong - Demo Account Refresh & Ingestion",
+          "completedAt": "2026-04-15T14:11:40.101Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "b13ca864-e0f4-4ff6-b020-ec3f4491643e",
+      "tsa_name": "Carlos Guilherme Matos de Almeida da Silva",
+      "project": "Siteimprove",
+      "milestone": null,
+      "unit": "project",
+      "impact": "Siteimprove content blueprint — unblocks accessibility demo story.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 84,
+        "open": 1,
+        "closed": 83,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Todo": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-773",
+          "title": "Siteimprove - Fix the data in the Staging environment and Production environment",
+          "url": "https://linear.app/testbox/issue/RAC-773/siteimprove-fix-the-data-in-the-staging-environment-and-production",
+          "status": "Todo",
+          "dueDate": null,
+          "updatedAt": "2026-04-17T11:57:09.496Z",
+          "labels": [
+            "Bug",
+            "Siteimprove",
+            "External"
+          ]
+        }
+      ],
+      "recent_done": [
+        {
+          "id": "RAC-750",
+          "title": "Siteimprove - Validate the new data changes in the production account",
+          "completedAt": "2026-04-17T11:53:49.843Z"
+        },
+        {
+          "id": "RAC-743",
+          "title": "Siteimprove - Decide the website strategy and create the new versions v2-v6",
+          "completedAt": "2026-04-17T11:49:33.977Z"
+        },
+        {
+          "id": "RAC-741",
+          "title": "Siteimprove - Open ticket for the engineering team to start ingestion of the financial story on the new siteimprove workspace",
+          "completedAt": "2026-04-10T22:36:46.100Z"
+        },
+        {
+          "id": "RAC-740",
+          "title": "Siteimprove - Invite new tbxofficial emails for the financial workspace",
+          "completedAt": "2026-04-10T15:50:29.458Z"
+        },
+        {
+          "id": "RAC-738",
+          "title": "Siteimprove - Change the financial website company story name",
+          "completedAt": "2026-04-07T19:49:29.461Z"
+        },
+        {
+          "id": "RAC-737",
+          "title": "Siteimprove - Update the websites icons and preview links to remove the lovable branding",
+          "completedAt": "2026-04-08T20:30:11.893Z"
+        },
+        {
+          "id": "RAC-493",
+          "title": "Release new dataset version and monitore engineering team to check the dataset version change on ...",
+          "completedAt": "2026-04-07T14:16:50.445Z"
+        },
+        {
+          "id": "RAC-446",
+          "title": "Migrate the Siteimprove dataset to the new dataset system and also create a new release",
+          "completedAt": "2026-04-07T14:19:11.167Z"
+        },
+        {
+          "id": "RAC-364",
+          "title": "Siteimprove - Customer Calls & Documentation",
+          "completedAt": "2026-04-07T14:18:54.793Z"
+        },
+        {
+          "id": "RAC-359",
+          "title": "Siteimprove - Dataset & Table Design",
+          "completedAt": "2026-04-07T14:19:00.010Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "b13ca864-e0f4-4ff6-b020-ec3f4491643e",
+      "tsa_name": "Carlos Guilherme Matos de Almeida da Silva",
+      "project": "Apollo",
+      "milestone": null,
+      "unit": "project",
+      "impact": "Apollo demo environment — sales intelligence use-case.",
+      "status": "done",
+      "reasons": [
+        "7 shipped"
+      ],
+      "metrics": {
+        "total": 7,
+        "open": 0,
+        "closed": 7,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {}
+      },
+      "open_issues": [],
+      "recent_done": [
+        {
+          "id": "RAC-742",
+          "title": "Apollo - Create a customer sharable document with the possible helps we can get from their engineering team",
+          "completedAt": "2026-04-10T22:39:51.669Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "b13ca864-e0f4-4ff6-b020-ec3f4491643e",
+      "tsa_name": "Carlos Guilherme Matos de Almeida da Silva",
+      "project": "[Internal] TSA Operations",
+      "milestone": null,
+      "unit": "project",
+      "impact": "TSA ops enablement — dashboards, automation, knowledge systems.",
+      "status": "done",
+      "reasons": [
+        "4 shipped"
+      ],
+      "metrics": {
+        "total": 4,
+        "open": 0,
+        "closed": 4,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {}
+      },
+      "open_issues": [],
+      "recent_done": [
+        {
+          "id": "RAC-636",
+          "title": "Launch Lessons Learned",
+          "completedAt": "2026-04-10T22:40:52.956Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[TSA] Diego Internal",
+      "milestone": null,
+      "unit": "project",
+      "impact": "[TSA] Diego Internal project health.",
+      "status": "red",
+      "reasons": [
+        "1 overdue (-7d worst)"
+      ],
+      "metrics": {
+        "total": 6,
+        "open": 5,
+        "closed": 1,
+        "overdue": 1,
+        "soon": 3,
+        "earliest_due": "2026-04-10",
+        "state_counts": {
+          "Todo": 4,
+          "In Progress": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-719",
+          "title": "People.ai",
+          "url": "https://linear.app/testbox/issue/RAC-719/peopleai",
+          "status": "Todo",
+          "dueDate": "2026-04-17",
+          "updatedAt": "2026-04-17T03:45:04.926Z",
+          "labels": []
+        },
+        {
+          "id": "RAC-718",
+          "title": "Tropic",
+          "url": "https://linear.app/testbox/issue/RAC-718/tropic",
+          "status": "Todo",
+          "dueDate": "2026-04-17",
+          "updatedAt": "2026-04-17T03:45:04.884Z",
+          "labels": []
+        },
+        {
+          "id": "RAC-716",
+          "title": "Gem",
+          "url": "https://linear.app/testbox/issue/RAC-716/gem",
+          "status": "Todo",
+          "dueDate": "2026-04-17",
+          "updatedAt": "2026-04-17T03:45:07.983Z",
+          "labels": []
+        },
+        {
+          "id": "RAC-715",
+          "title": "Brevo",
+          "url": "https://linear.app/testbox/issue/RAC-715/brevo",
+          "status": "Todo",
+          "dueDate": "2026-04-10",
+          "updatedAt": "2026-04-10T03:20:12.718Z",
+          "labels": []
+        },
+        {
+          "id": "RAC-698",
+          "title": "Projects Documentation",
+          "url": "https://linear.app/testbox/issue/RAC-698/projects-documentation",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-04-01T12:50:52.735Z",
+          "labels": []
+        }
+      ],
+      "recent_done": [
+        {
+          "id": "RAC-717",
+          "title": "Tabs",
+          "completedAt": "2026-04-13T17:19:00.660Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[Tabs] Integration",
+      "milestone": "Demo experience",
+      "unit": "milestone",
+      "impact": "Tabs renewal story design — 3 demo scenarios feed customer validation.",
+      "status": "yellow",
+      "reasons": [
+        "1 due in ≤3d, 66% still open"
+      ],
+      "metrics": {
+        "total": 6,
+        "open": 4,
+        "closed": 2,
+        "overdue": 0,
+        "soon": 1,
+        "earliest_due": "2026-04-17",
+        "state_counts": {
+          "In Progress": 2,
+          "Backlog": 2
+        }
+      },
+      "open_issues": [
+        {
+          "id": "PLA-3438",
+          "title": "[Tabs] Create 3 New Demo Stories - Story 1: Improvement",
+          "url": "https://linear.app/testbox/issue/PLA-3438/tabs-create-3-new-demo-stories-story-1-improvement",
+          "status": "In Progress",
+          "dueDate": "2026-04-17",
+          "updatedAt": "2026-04-17T04:45:08.062Z",
+          "labels": [
+            "Customer Request"
+          ]
+        },
+        {
+          "id": "PLA-3373",
+          "title": "[Tabs] Create 3 New Demo Stories - Story 3: [Name TBD] — Seat-Based Billing Customer",
+          "url": "https://linear.app/testbox/issue/PLA-3373/tabs-create-3-new-demo-stories-story-3-name-tbd-seat-based-billing",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-03-31T13:54:56.785Z",
+          "labels": []
+        },
+        {
+          "id": "PLA-3372",
+          "title": "[Tabs] Create 3 New Demo Stories - Story 2: Advanced Utilities — Usage-Based Customer (ReplacementStory)",
+          "url": "https://linear.app/testbox/issue/PLA-3372/tabs-create-3-new-demo-stories-story-2-advanced-utilities-usage-based",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-03-31T13:54:50.558Z",
+          "labels": []
+        },
+        {
+          "id": "PLA-3041",
+          "title": "[Tabs] Create 3 New Demo Stories",
+          "url": "https://linear.app/testbox/issue/PLA-3041/tabs-create-3-new-demo-stories",
+          "status": "In Progress",
+          "dueDate": "2026-05-30",
+          "updatedAt": "2026-04-14T12:31:06.630Z",
+          "labels": []
+        }
+      ],
+      "recent_done": [
+        {
+          "id": "PLA-3371",
+          "title": "[Tabs] Create 3 New Demo Stories - Story 1: ACRO — Simple Flat-Fee Customer (Renewal Story)",
+          "completedAt": "2026-04-08T12:33:50.202Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[Tropic] Implementation",
+      "milestone": "Demo/Sandbox Critical Automation",
+      "unit": "milestone",
+      "impact": "Tropic data quality — avoid demo incidents during instance testing.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 2,
+        "open": 2,
+        "closed": 0,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Backlog": 2
+        }
+      },
+      "open_issues": [
+        {
+          "id": "PLA-3337",
+          "title": "[Tropic] Don't execute automations to Gong, Slack and Zendesk and avoid duplicate records",
+          "url": "https://linear.app/testbox/issue/PLA-3337/tropic-dont-execute-automations-to-gong-slack-and-zendesk-and-avoid",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-03-09T18:40:32.129Z",
+          "labels": []
+        },
+        {
+          "id": "PLA-3323",
+          "title": "[Tropic] New endpoint to provision and ingest a new trial",
+          "url": "https://linear.app/testbox/issue/PLA-3323/tropic-new-endpoint-to-provision-and-ingest-a-new-trial",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-04-02T16:31:47.630Z",
+          "labels": []
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[Tropic] Implementation",
+      "milestone": null,
+      "unit": "project",
+      "impact": "Tropic data quality — avoid demo incidents during instance testing.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 4,
+        "open": 2,
+        "closed": 2,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": "2026-04-24",
+        "state_counts": {
+          "Backlog": 2
+        }
+      },
+      "open_issues": [
+        {
+          "id": "PLA-3309",
+          "title": "[Tropic] Fix Departments, Purchase Category and Savings Amount on Tropic Dataset",
+          "url": "https://linear.app/testbox/issue/PLA-3309/tropic-fix-departments-purchase-category-and-savings-amount-on-tropic",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-03-31T18:36:02.796Z",
+          "labels": []
+        },
+        {
+          "id": "PLA-3106",
+          "title": "[Tropic] Automatize the Instances Creation",
+          "url": "https://linear.app/testbox/issue/PLA-3106/tropic-automatize-the-instances-creation",
+          "status": "Backlog",
+          "dueDate": "2026-04-24",
+          "updatedAt": "2026-04-02T16:40:10.021Z",
+          "labels": []
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[Gem] Integration",
+      "milestone": "12. Fit & Finish",
+      "unit": "milestone",
+      "impact": "Gem recruiting demo — pre-sales pipeline readiness.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 2,
+        "open": 2,
+        "closed": 0,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Backlog": 2
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-130",
+          "title": "[GEM] Write documentation package",
+          "url": "https://linear.app/testbox/issue/RAC-130/gem-write-documentation-package",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T12:25:05.366Z",
+          "labels": [
+            "gem-project",
+            "launch"
+          ]
+        },
+        {
+          "id": "RAC-126",
+          "title": "[GEM] Run internal QA on all stories",
+          "url": "https://linear.app/testbox/issue/RAC-126/gem-run-internal-qa-on-all-stories",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T12:25:17.501Z",
+          "labels": [
+            "gem-project",
+            "stories"
+          ]
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[Gem] Integration",
+      "milestone": "4. Data Gen & Validation",
+      "unit": "milestone",
+      "impact": "Gem recruiting demo — pre-sales pipeline readiness.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 7,
+        "open": 1,
+        "closed": 6,
+        "overdue": 0,
+        "soon": 1,
+        "earliest_due": "2026-04-17",
+        "state_counts": {
+          "In Progress": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-683",
+          "title": "[Gem] Data Design + MVP - Story 1: Analytics & Forecasting for Hiring Planning",
+          "url": "https://linear.app/testbox/issue/RAC-683/gem-data-design-mvp-story-1-analytics-and-forecasting-for-hiring",
+          "status": "In Progress",
+          "dueDate": "2026-04-17",
+          "updatedAt": "2026-04-17T03:45:07.935Z",
+          "labels": []
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[Gem] Integration",
+      "milestone": "2. TestBox Setup & Configurations",
+      "unit": "milestone",
+      "impact": "Gem recruiting demo — pre-sales pipeline readiness.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 5,
+        "open": 1,
+        "closed": 4,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Backlog": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-151",
+          "title": "[Gem] - Provide guidance on the install of TestBox SDK for sandboxes",
+          "url": "https://linear.app/testbox/issue/RAC-151/gem-provide-guidance-on-the-install-of-testbox-sdk-for-sandboxes",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-02-17T18:08:41.670Z",
+          "labels": []
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[Tabs] Integration",
+      "milestone": "Activity plan",
+      "unit": "milestone",
+      "impact": "Tabs renewal story design — 3 demo scenarios feed customer validation.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 2,
+        "open": 1,
+        "closed": 1,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Backlog": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "PLA-2732",
+          "title": "[Tabs] Upload usage for each customer - activity plan (updated, relative dates)",
+          "url": "https://linear.app/testbox/issue/PLA-2732/tabs-upload-usage-for-each-customer-activity-plan-updated-relative",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-04-06T17:42:35.065Z",
+          "labels": []
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[Tropic] Implementation",
+      "milestone": "Post-launch Requests",
+      "unit": "milestone",
+      "impact": "Tropic data quality — avoid demo incidents during instance testing.",
+      "status": "done",
+      "reasons": [
+        "1 shipped"
+      ],
+      "metrics": {
+        "total": 1,
+        "open": 0,
+        "closed": 1,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {}
+      },
+      "open_issues": [],
+      "recent_done": [
+        {
+          "id": "PLA-3456",
+          "title": "[Tropic] - Create data for Log Savings Data to Contracts",
+          "completedAt": "2026-04-09T22:17:22.245Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "717e7b13-d840-41c0-baeb-444354c8ff91",
+      "tsa_name": "Diego Cavalli",
+      "project": "[People.ai] Integration",
+      "milestone": "Maintenance",
+      "unit": "milestone",
+      "impact": "People.ai churn prevention — Phase 1 is renewal-critical.",
+      "status": "done",
+      "reasons": [
+        "1 shipped"
+      ],
+      "metrics": {
+        "total": 1,
+        "open": 0,
+        "closed": 1,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {}
+      },
+      "open_issues": [],
+      "recent_done": [
+        {
+          "id": "TOU-1117",
+          "title": "[People.ai] Customer API changes",
+          "completedAt": "2026-04-06T18:07:56.215Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "d9745bdb-7138-4345-9303-516aa6e4ec39",
+      "tsa_name": "Gabrielle Cupello",
+      "project": "Mailchimp",
+      "milestone": null,
+      "unit": "project",
+      "impact": "Mailchimp adoption tracking — feeds QBR narrative with customer.",
+      "status": "yellow",
+      "reasons": [
+        "2 blocked by customer / paused"
+      ],
+      "metrics": {
+        "total": 37,
+        "open": 3,
+        "closed": 34,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": "2026-04-21",
+        "state_counts": {
+          "In Progress": 1,
+          "Paused": 2
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-771",
+          "title": "Post-Purchase Cross-sell + Delivery to Review Request",
+          "url": "https://linear.app/testbox/issue/RAC-771/post-purchase-cross-sell-delivery-to-review-request",
+          "status": "In Progress",
+          "dueDate": "2026-04-21",
+          "updatedAt": "2026-04-16T18:06:41.739Z",
+          "labels": [
+            "Demo",
+            "External",
+            "validate"
+          ]
+        },
+        {
+          "id": "RAC-322",
+          "title": "Cloudinary",
+          "url": "https://linear.app/testbox/issue/RAC-322/cloudinary",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-03-20T02:27:16.520Z",
+          "labels": [
+            "Strategic",
+            "Mailchimp",
+            "External"
+          ]
+        },
+        {
+          "id": "RAC-319",
+          "title": "Shopify Tool",
+          "url": "https://linear.app/testbox/issue/RAC-319/shopify-tool",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-03-20T02:27:22.063Z",
+          "labels": [
+            "Improvement",
+            "Mailchimp",
+            "External"
+          ]
+        }
+      ],
+      "recent_done": [
+        {
+          "id": "PLA-3381",
+          "title": "[Mailchimp] Copy Mailchimp flows, campaigns & assets to dataset",
+          "completedAt": "2026-04-09T14:24:58.622Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "d9745bdb-7138-4345-9303-516aa6e4ec39",
+      "tsa_name": "Gabrielle Cupello",
+      "project": "Archer",
+      "milestone": null,
+      "unit": "project",
+      "impact": "Archer GRC demo — Domain-by-domain data ingestion.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 32,
+        "open": 1,
+        "closed": 31,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": "2026-04-30",
+        "state_counts": {
+          "In Review": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-648",
+          "title": "[Archer] Create data for the Third Party module",
+          "url": "https://linear.app/testbox/issue/RAC-648/archer-create-data-for-the-third-party-module",
+          "status": "In Review",
+          "dueDate": "2026-04-30",
+          "updatedAt": "2026-04-14T17:38:36.882Z",
+          "labels": [
+            "External"
+          ]
+        }
+      ],
+      "recent_done": [
+        {
+          "id": "RAC-734",
+          "title": "AI Ingestion of Risk, Enterprise and Compliance modules on Instance 82 + page and column validation",
+          "completedAt": "2026-04-08T17:51:34.115Z"
+        },
+        {
+          "id": "RAC-662",
+          "title": "Create data — Master Service Agreement (ID: 397)",
+          "completedAt": "2026-04-14T17:37:33.080Z"
+        },
+        {
+          "id": "RAC-661",
+          "title": "Create data — Contracts (ID: 88)",
+          "completedAt": "2026-04-14T17:37:35.150Z"
+        },
+        {
+          "id": "RAC-660",
+          "title": "Create data — Engagements (ID: 89)",
+          "completedAt": "2026-04-14T17:37:37.106Z"
+        },
+        {
+          "id": "RAC-659",
+          "title": "Create data — Third Party Scan Results (ID: 625)",
+          "completedAt": "2026-04-14T17:37:38.890Z"
+        },
+        {
+          "id": "RAC-658",
+          "title": "Create data — Third Party Tickets (ID: 624)",
+          "completedAt": "2026-04-14T17:37:41.054Z"
+        },
+        {
+          "id": "RAC-657",
+          "title": "Create data — Third Party Campaign (ID: 559)",
+          "completedAt": "2026-04-14T17:37:42.785Z"
+        },
+        {
+          "id": "RAC-656",
+          "title": "Create data — Third Party Metrics Results (ID: 401)",
+          "completedAt": "2026-04-14T17:37:45.481Z"
+        },
+        {
+          "id": "RAC-654",
+          "title": "Create data — Third Party Metrics (ID: 402)",
+          "completedAt": "2026-04-14T17:37:47.236Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "d9745bdb-7138-4345-9303-516aa6e4ec39",
+      "tsa_name": "Gabrielle Cupello",
+      "project": "(no project)",
+      "milestone": null,
+      "unit": "project",
+      "impact": "(no project) project health.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 3,
+        "open": 1,
+        "closed": 2,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Backlog": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-227",
+          "title": "Get Coda write access to create subpages",
+          "url": "https://linear.app/testbox/issue/RAC-227/get-coda-write-access-to-create-subpages",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-03-25T20:02:46.895Z",
+          "labels": [
+            "Internal"
+          ]
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "d9745bdb-7138-4345-9303-516aa6e4ec39",
+      "tsa_name": "Gabrielle Cupello",
+      "project": "[Gainsight] Staircase AI Integration",
+      "milestone": null,
+      "unit": "project",
+      "impact": "Staircase AI renewals — SFDC sync impacts customer reporting.",
+      "status": "done",
+      "reasons": [
+        "1 shipped"
+      ],
+      "metrics": {
+        "total": 1,
+        "open": 0,
+        "closed": 1,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {}
+      },
+      "open_issues": [],
+      "recent_done": [
+        {
+          "id": "TOU-1119",
+          "title": "[Gainsight] Staircase AI is overwriting Renewal Date on Salesforce Accounts",
+          "completedAt": "2026-04-10T18:07:36.681Z"
+        }
+      ]
+    },
+    {
+      "tsa_id": "a6063009-d822-49f1-a638-6cebfe59e89e",
+      "tsa_name": "Thiago Rodrigues",
+      "project": "[Internal] TSA Operations",
+      "milestone": null,
+      "unit": "project",
+      "impact": "TSA ops enablement — dashboards, automation, knowledge systems.",
+      "status": "yellow",
+      "reasons": [
+        "2 blocked by customer / paused"
+      ],
+      "metrics": {
+        "total": 57,
+        "open": 28,
+        "closed": 29,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "In Progress": 26,
+          "Paused": 2
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-614",
+          "title": "Solutions Excellence\r 2026 Strategic Plan",
+          "url": "https://linear.app/testbox/issue/RAC-614/solutions-excellence-2026-strategic-plan",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:09:18.867Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-613",
+          "title": "TSA KPI",
+          "url": "https://linear.app/testbox/issue/RAC-613/tsa-kpi",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-27T02:47:35.736Z",
+          "labels": [
+            "Internal",
+            "Strategic",
+            "Improvement"
+          ]
+        },
+        {
+          "id": "RAC-612",
+          "title": "Build a professional onboarding",
+          "url": "https://linear.app/testbox/issue/RAC-612/build-a-professional-onboarding",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:09:17.391Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-611",
+          "title": "Help Waki Q.A. Monarch",
+          "url": "https://linear.app/testbox/issue/RAC-611/help-waki-qa-monarch",
+          "status": "Paused",
+          "dueDate": null,
+          "updatedAt": "2026-03-24T18:08:01.762Z",
+          "labels": [
+            "Strategic",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-608",
+          "title": "Gantt Routine",
+          "url": "https://linear.app/testbox/issue/RAC-608/gantt-routine",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:09:13.745Z",
+          "labels": [
+            "Strategic",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-536",
+          "title": "TSA Flowchart",
+          "url": "https://linear.app/testbox/issue/RAC-536/tsa-flowchart",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:10.267Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-535",
+          "title": "Customer Overview - Others",
+          "url": "https://linear.app/testbox/issue/RAC-535/customer-overview-others",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:09.306Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-534",
+          "title": "Customer Overview - BREVO",
+          "url": "https://linear.app/testbox/issue/RAC-534/customer-overview-brevo",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:08.548Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-533",
+          "title": "Customer Overview - GAINSIGHT",
+          "url": "https://linear.app/testbox/issue/RAC-533/customer-overview-gainsight",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:07.657Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-532",
+          "title": "Customer Overview - PEOPLE.AI",
+          "url": "https://linear.app/testbox/issue/RAC-532/customer-overview-peopleai",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:06.851Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-531",
+          "title": "Customer Overview - PEOPLE.AI",
+          "url": "https://linear.app/testbox/issue/RAC-531/customer-overview-peopleai",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:06.063Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-530",
+          "title": "Customer Overview - TROPIC",
+          "url": "https://linear.app/testbox/issue/RAC-530/customer-overview-tropic",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:05.314Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-529",
+          "title": "Customer Overview - TABS",
+          "url": "https://linear.app/testbox/issue/RAC-529/customer-overview-tabs",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:04.006Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-528",
+          "title": "Customer Overview - ARCHER",
+          "url": "https://linear.app/testbox/issue/RAC-528/customer-overview-archer",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:02.211Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-527",
+          "title": "Customer Overview - MAILCHIMP",
+          "url": "https://linear.app/testbox/issue/RAC-527/customer-overview-mailchimp",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:01.163Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-526",
+          "title": "Customer Overview - QBO",
+          "url": "https://linear.app/testbox/issue/RAC-526/customer-overview-qbo",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:08:00.120Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-525",
+          "title": "Customer Overview - GONG",
+          "url": "https://linear.app/testbox/issue/RAC-525/customer-overview-gong",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:59.383Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-524",
+          "title": "SALES FORCE AT CODA",
+          "url": "https://linear.app/testbox/issue/RAC-524/sales-force-at-coda",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:58.623Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-523",
+          "title": "TSA routine mapping",
+          "url": "https://linear.app/testbox/issue/RAC-523/tsa-routine-mapping",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:57.847Z",
+          "labels": [
+            "Strategic",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-522",
+          "title": "TSA Documentation Process",
+          "url": "https://linear.app/testbox/issue/RAC-522/tsa-documentation-process",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:57.088Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-521",
+          "title": "TSA Routine Guide",
+          "url": "https://linear.app/testbox/issue/RAC-521/tsa-routine-guide",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:56.246Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-520",
+          "title": "TSA Feedback Plan Doc",
+          "url": "https://linear.app/testbox/issue/RAC-520/tsa-feedback-plan-doc",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:55.368Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-519",
+          "title": "TSA Communication Process",
+          "url": "https://linear.app/testbox/issue/RAC-519/tsa-communication-process",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:54.431Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-518",
+          "title": "TSA Documentation Process",
+          "url": "https://linear.app/testbox/issue/RAC-518/tsa-documentation-process",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:53.502Z",
+          "labels": [
+            "Improvement",
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-515",
+          "title": "Internal - TSA Process & KPIs",
+          "url": "https://linear.app/testbox/issue/RAC-515/internal-tsa-process-and-kpis",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:09:12.937Z",
+          "labels": [
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-501",
+          "title": "CODA - Flowchart & Knowledge Base",
+          "url": "https://linear.app/testbox/issue/RAC-501/coda-flowchart-and-knowledge-base",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:38.545Z",
+          "labels": [
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-500",
+          "title": "CODA - Customer Overview Pages",
+          "url": "https://linear.app/testbox/issue/RAC-500/coda-customer-overview-pages",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:37.899Z",
+          "labels": [
+            "Internal"
+          ]
+        },
+        {
+          "id": "RAC-499",
+          "title": "CODA - TSA Process Documentation",
+          "url": "https://linear.app/testbox/issue/RAC-499/coda-tsa-process-documentation",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:37.265Z",
+          "labels": [
+            "Internal"
+          ]
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "a6063009-d822-49f1-a638-6cebfe59e89e",
+      "tsa_name": "Thiago Rodrigues",
+      "project": "QBO",
+      "milestone": null,
+      "unit": "project",
+      "impact": "QuickBooks demo fidelity — affects buyer conversion in Intuit pipeline.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 40,
+        "open": 3,
+        "closed": 37,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": "2026-04-30",
+        "state_counts": {
+          "In Progress": 3
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-564",
+          "title": "P&L Negative for Professional Services (PLA-3332)",
+          "url": "https://linear.app/testbox/issue/RAC-564/pandl-negative-for-professional-services-pla-3332",
+          "status": "In Progress",
+          "dueDate": "2026-04-30",
+          "updatedAt": "2026-04-13T12:29:46.965Z",
+          "labels": [
+            "Maintenance",
+            "QBO",
+            "External"
+          ]
+        },
+        {
+          "id": "RAC-505",
+          "title": "QBO - Deliverables & Handover",
+          "url": "https://linear.app/testbox/issue/RAC-505/qbo-deliverables-and-handover",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:41.357Z",
+          "labels": [
+            "QBO",
+            "External"
+          ]
+        },
+        {
+          "id": "RAC-504",
+          "title": "QBO - Financial Investigations",
+          "url": "https://linear.app/testbox/issue/RAC-504/qbo-financial-investigations",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:07:40.627Z",
+          "labels": [
+            "QBO",
+            "External"
+          ]
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "a6063009-d822-49f1-a638-6cebfe59e89e",
+      "tsa_name": "Thiago Rodrigues",
+      "project": "TSA's Worklog",
+      "milestone": null,
+      "unit": "project",
+      "impact": "TSA's Worklog project health.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 3,
+        "open": 2,
+        "closed": 1,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Triage": 2
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-36",
+          "title": "[Worklog]26_01_14 TSA Thiago Rodrigues",
+          "url": "https://linear.app/testbox/issue/RAC-36/worklog26-01-14-tsa-thiago-rodrigues",
+          "status": "Triage",
+          "dueDate": null,
+          "updatedAt": "2026-03-20T18:18:42.134Z",
+          "labels": []
+        },
+        {
+          "id": "RAC-19",
+          "title": "[Worklog]26_01_07 TSA Thiago Rodrigues",
+          "url": "https://linear.app/testbox/issue/RAC-19/worklog26-01-07-tsa-thiago-rodrigues",
+          "status": "Triage",
+          "dueDate": null,
+          "updatedAt": "2026-04-15T15:42:54.769Z",
+          "labels": []
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "a6063009-d822-49f1-a638-6cebfe59e89e",
+      "tsa_name": "Thiago Rodrigues",
+      "project": "(no project)",
+      "milestone": null,
+      "unit": "project",
+      "impact": "(no project) project health.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 13,
+        "open": 1,
+        "closed": 12,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "In Progress": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-512",
+          "title": "HockeyStack - Analysis & Onboarding",
+          "url": "https://linear.app/testbox/issue/RAC-512/hockeystack-analysis-and-onboarding",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-18T16:09:01.943Z",
+          "labels": [
+            "HockeyStack",
+            "External"
+          ]
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "a6063009-d822-49f1-a638-6cebfe59e89e",
+      "tsa_name": "Thiago Rodrigues",
+      "project": "Bill",
+      "milestone": null,
+      "unit": "project",
+      "impact": "Bill implementation scoping — $50K+ fintech account in scope phase.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 5,
+        "open": 1,
+        "closed": 4,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "In Progress": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "RAC-644",
+          "title": "[Bill] Initial mapping & environment scoping",
+          "url": "https://linear.app/testbox/issue/RAC-644/bill-initial-mapping-and-environment-scoping",
+          "status": "In Progress",
+          "dueDate": null,
+          "updatedAt": "2026-03-20T02:08:50.875Z",
+          "labels": [
+            "External"
+          ]
+        }
+      ],
+      "recent_done": []
+    },
+    {
+      "tsa_id": "a6063009-d822-49f1-a638-6cebfe59e89e",
+      "tsa_name": "Thiago Rodrigues",
+      "project": "Quickbooks Implementation",
+      "milestone": "Winter Release 2026",
+      "unit": "milestone",
+      "impact": "Intuit release train — delay slips GA date for all QBO stories.",
+      "status": "green",
+      "reasons": [],
+      "metrics": {
+        "total": 2,
+        "open": 1,
+        "closed": 1,
+        "overdue": 0,
+        "soon": 0,
+        "earliest_due": null,
+        "state_counts": {
+          "Backlog": 1
+        }
+      },
+      "open_issues": [
+        {
+          "id": "PLA-3256",
+          "title": "[QuickBooks] Dataset vs SALES Audit - Master Worklog (Winter Release FY26)",
+          "url": "https://linear.app/testbox/issue/PLA-3256/quickbooks-dataset-vs-sales-audit-master-worklog-winter-release-fy26",
+          "status": "Backlog",
+          "dueDate": null,
+          "updatedAt": "2026-03-12T12:20:33.663Z",
+          "labels": []
+        }
+      ],
+      "recent_done": []
+    }
+  ]
+}
