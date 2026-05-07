@@ -35,6 +35,20 @@ class KPIHandler(BaseHTTPRequestHandler):
         else:
             self.send_error(404)
 
+    def do_HEAD(self):
+        if self.path in ('/', '/index.html', '/KPI_DASHBOARD.html'):
+            try:
+                size = os.path.getsize(DASHBOARD_PATH)
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/html; charset=utf-8')
+                self.send_header('Content-Length', str(size))
+                self.send_header('Cache-Control', 'no-cache')
+                self.end_headers()
+            except FileNotFoundError:
+                self.send_error(404)
+        else:
+            self.send_error(404)
+
     def do_POST(self):
         if self.path == '/refresh':
             self._run_refresh()
