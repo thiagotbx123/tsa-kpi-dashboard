@@ -57,14 +57,13 @@ data_json_safe = data_json.replace('</script>', '<\\/script>').replace('</Script
 timeline_json_safe = timeline_json.replace('</script>', '<\\/script>').replace('</Script>', '<\\/Script>')
 
 # M11: Record build timestamp for staleness detection.
-# Format: US 12-hour with AM/PM (e.g. "2026-05-07 1:38 PM").
-_TS_FMT = '%Y-%m-%d %-I:%M %p'
-build_date = datetime.datetime.now().strftime(_TS_FMT)
+# Emit ISO-8601 UTC; client-side JS converts to the viewer's local timezone with AM/PM.
+build_date = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 # A37-002: Use API cache file mtime as "last refresh" indicator instead of build date
 _kpi_cache = os.path.join(SCRIPT_DIR, '..', '_kpi_all_members.json')
 if os.path.exists(_kpi_cache):
-    _cache_mtime = datetime.datetime.fromtimestamp(os.path.getmtime(_kpi_cache))
-    api_refresh_date = _cache_mtime.strftime(_TS_FMT)
+    _cache_mtime = datetime.datetime.fromtimestamp(os.path.getmtime(_kpi_cache), tz=datetime.timezone.utc)
+    api_refresh_date = _cache_mtime.strftime('%Y-%m-%dT%H:%M:%SZ')
 else:
     api_refresh_date = 'unknown'
 # Find the most recent dateAdd in data for staleness comparison (only past/present dates)
@@ -692,13 +691,23 @@ function groupByMonth(weeks){
 }
 const MONTHS=groupByMonth(CORE_WEEKS);
 
-/* M11+A37: Staleness indicator — shows API cache mtime, not build date */
+/* M11+A37: Staleness indicator — converts UTC ISO timestamps to viewer's local timezone */
 (function(){
+  function fmtLocal(iso){
+    if(!iso||iso==='unknown')return iso;
+    const d=new Date(iso);
+    if(isNaN(d.getTime()))return iso;
+    const pad=n=>String(n).padStart(2,'0');
+    let h=d.getHours();
+    const ampm=h>=12?'PM':'AM';
+    h=h%12||12;
+    return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+h+':'+pad(d.getMinutes())+' '+ampm;
+  }
   const el=document.getElementById('refreshDate');
   const banner=document.getElementById('stalenessBanner');
   if(banner)banner.style.display='none';
-  const refreshLabel=API_REFRESH!=='unknown'?API_REFRESH:BUILD_DATE;
-  if(el)el.textContent='Data refreshed: '+refreshLabel+' | Built: '+BUILD_DATE;
+  const refreshLabel=API_REFRESH!=='unknown'?fmtLocal(API_REFRESH):fmtLocal(BUILD_DATE);
+  if(el)el.textContent='Data refreshed: '+refreshLabel+' | Built: '+fmtLocal(BUILD_DATE);
 })();
 
 /* ── State — M12: default to ALL ──────────────────── */
