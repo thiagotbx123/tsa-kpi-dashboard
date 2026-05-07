@@ -715,7 +715,9 @@ class TestCalcPerfWithHistory(unittest.TestCase):
         self.assertEqual(calc_perf_with_history(r), 'On Time')
 
     def test_in_review_late_when_review_move_after_eta(self):
-        past_eta = (datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d')
+        # D.LIE27: 1-business-day tolerance is applied. Use a wide gap so the
+        # assertion holds regardless of which weekday the tests run.
+        past_eta = (datetime.now() - timedelta(days=30)).strftime('%Y-%m-%d')
         in_review = (datetime.now() - timedelta(days=2)).strftime('%Y-%m-%d')
         r = self._rec(
             status='In Progress',
