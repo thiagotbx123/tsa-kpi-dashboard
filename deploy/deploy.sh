@@ -12,6 +12,7 @@ cd "${APP_DIR}"
 echo "[deploy] Fetching latest..."
 git fetch --quiet origin main
 git reset --hard origin/main
+echo "[deploy] Deploying commit $(git rev-parse --short HEAD): $(git log -1 --pretty=%s)"
 
 echo "[deploy] Updating Python deps..."
 "${APP_DIR}/.venv/bin/pip" install --quiet -r scripts/kpi/requirements.txt
