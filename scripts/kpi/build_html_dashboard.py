@@ -748,13 +748,21 @@ function hideTip(){tip.style.display='none'}
 function refreshDashboard(){
   const btn=document.getElementById('btnRefresh');
   const orig=btn.innerHTML;
-  if(!['localhost','127.0.0.1'].includes(location.hostname)){
-    alert("For dashboard updates, please reach out to Thiago Rodrigues.");
-    return;
-  }
+  const pw=prompt('Password required to refresh data:');
+  if(pw===null||pw==='') return;
+  const headers={'X-Refresh-Password':pw};
+  const showWrongPw=()=>{
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Wrong password';
+    btn.style.background='linear-gradient(135deg,#991b1b,#dc2626)';btn.style.opacity='1';
+    setTimeout(()=>{btn.innerHTML=orig;btn.style.background='linear-gradient(135deg,#1e40af,#2563eb)';btn.disabled=false},3000);
+  };
   btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" style="animation:spin 1s linear infinite"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>Refreshing...';
   btn.disabled=true;btn.style.opacity='.7';
-  fetch('/refresh',{method:'POST'}).then(r=>r.json()).then(d=>{
+  fetch('/refresh',{method:'POST',headers}).then(r=>{
+    if(r.status===401){showWrongPw();return null;}
+    return r.json();
+  }).then(d=>{
+    if(d===null) return;
     if(d.success){
       btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg>Done!';
       btn.style.background='linear-gradient(135deg,#065f46,#059669)';btn.style.opacity='1';
@@ -766,7 +774,11 @@ function refreshDashboard(){
     }
   }).catch(()=>{
     /* Server not running — try localhost:8787 in case file:// was opened directly */
-    fetch('http://localhost:8787/refresh',{method:'POST'}).then(r=>r.json()).then(d=>{
+    fetch('http://localhost:8787/refresh',{method:'POST',headers}).then(r=>{
+      if(r.status===401){showWrongPw();return null;}
+      return r.json();
+    }).then(d=>{
+      if(d===null) return;
       if(d.success){
         btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg>Done! Redirecting...';
         btn.style.background='linear-gradient(135deg,#065f46,#059669)';btn.style.opacity='1';

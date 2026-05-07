@@ -51,6 +51,22 @@ class KPIHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         if self.path == '/refresh':
+            expected = os.environ.get('KPI_REFRESH_PASSWORD', '')
+            if not expected:
+                self.send_response(503)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(b'{"success":false,"message":"KPI_REFRESH_PASSWORD not configured on server"}')
+                return
+            provided = self.headers.get('X-Refresh-Password', '')
+            if provided != expected:
+                self.send_response(401)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(b'{"success":false,"message":"Wrong password"}')
+                return
             self._run_refresh()
         else:
             self.send_error(404)
