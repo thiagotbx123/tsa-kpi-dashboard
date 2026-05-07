@@ -56,13 +56,15 @@ except (FileNotFoundError, json.JSONDecodeError):
 data_json_safe = data_json.replace('</script>', '<\\/script>').replace('</Script>', '<\\/Script>')
 timeline_json_safe = timeline_json.replace('</script>', '<\\/script>').replace('</Script>', '<\\/Script>')
 
-# M11: Record build timestamp for staleness detection
-build_date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+# M11: Record build timestamp for staleness detection.
+# Format: US 12-hour with AM/PM (e.g. "2026-05-07 1:38 PM").
+_TS_FMT = '%Y-%m-%d %-I:%M %p'
+build_date = datetime.datetime.now().strftime(_TS_FMT)
 # A37-002: Use API cache file mtime as "last refresh" indicator instead of build date
 _kpi_cache = os.path.join(SCRIPT_DIR, '..', '_kpi_all_members.json')
 if os.path.exists(_kpi_cache):
     _cache_mtime = datetime.datetime.fromtimestamp(os.path.getmtime(_kpi_cache))
-    api_refresh_date = _cache_mtime.strftime('%Y-%m-%d %H:%M')
+    api_refresh_date = _cache_mtime.strftime(_TS_FMT)
 else:
     api_refresh_date = 'unknown'
 # Find the most recent dateAdd in data for staleness comparison (only past/present dates)
