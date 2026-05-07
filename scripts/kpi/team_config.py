@@ -6,7 +6,8 @@ Import from this module in merge, normalize, refresh, build, upload.
 import os
 
 # ── Output directory ──
-OUTPUT_DIR = os.path.join(os.path.expanduser('~'), 'Downloads')
+# Honors KPI_OUTPUT_DIR env var (used by EC2 systemd unit); defaults to ~/Downloads.
+OUTPUT_DIR = os.environ.get('KPI_OUTPUT_DIR') or os.path.join(os.path.expanduser('~'), 'Downloads')
 
 # ── Person maps ──
 

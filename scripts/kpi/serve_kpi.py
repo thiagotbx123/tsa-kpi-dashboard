@@ -30,7 +30,7 @@ PYTHON = sys.executable
 
 class KPIHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path == '/' or self.path == '/index.html':
+        if self.path in ('/', '/index.html', '/KPI_DASHBOARD.html'):
             self._serve_dashboard()
         else:
             self.send_error(404)

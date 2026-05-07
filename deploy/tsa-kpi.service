@@ -1,0 +1,18 @@
+[Unit]
+Description=TSA KPI Dashboard HTTP server (serve_kpi.py)
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/opt/tsa-kpi
+EnvironmentFile=-/opt/tsa-kpi/.env
+Environment=KPI_OUTPUT_DIR=/opt/tsa-kpi/output
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/tsa-kpi/.venv/bin/python /opt/tsa-kpi/scripts/kpi/serve_kpi.py --port 8787
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
