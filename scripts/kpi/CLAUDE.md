@@ -436,7 +436,7 @@ SLACK_USER_ID=U0xxxx
 |---------|--------|
 | Linear = source of truth | Sheets congelado como backlog historico |
 | createdAt = dateAdd | Linear nao tem campo separado de "date added" |
-| Zero tolerancia On Time | delivery <= dueDate (exato, sem buffer de dias) |
+| 1 business-day de tolerancia On Time | delivery <= dueDate + 1 business day (D.LIE27, introduzido 2026-04-24) |
 | First In Review/Done = delivery | completedAt e proxy; transicao de history e mais precisa |
 | Parent tickets excluidos | Contam subtasks (trabalho real), nao parents (coordenacao) |
 | Original assignee = owner em review | Implementor mantem credito quando reassigned para revisao |

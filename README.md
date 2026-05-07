@@ -262,7 +262,7 @@ Edite `scripts/kpi/team_config.py` para alterar o roster — esse arquivo é a *
 | Decisão | Motivo |
 |---------|--------|
 | Linear = source of truth | Sheets congelado como backlog histórico |
-| Zero tolerância On Time | `delivery <= dueDate` (sem buffer de dias) |
+| 1 dia útil de tolerância On Time | `delivery <= dueDate + 1 business day` (D.LIE27, introduzido 2026-04-24) — acomoda ETAs em fim de semana |
 | First In Review/Done = delivery | Mais preciso que `completedAt` |
 | Parent tickets excluídos | Subtasks contam o trabalho real (D.LIE19) |
 | Original assignee = owner em review | Implementor mantém crédito quando reassigned (D.LIE23) |
