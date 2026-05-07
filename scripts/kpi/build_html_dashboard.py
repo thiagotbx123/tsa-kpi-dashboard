@@ -56,13 +56,14 @@ except (FileNotFoundError, json.JSONDecodeError):
 data_json_safe = data_json.replace('</script>', '<\\/script>').replace('</Script>', '<\\/Script>')
 timeline_json_safe = timeline_json.replace('</script>', '<\\/script>').replace('</Script>', '<\\/Script>')
 
-# M11: Record build timestamp for staleness detection
-build_date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+# M11: Record build timestamp for staleness detection.
+# Emit ISO-8601 UTC; client-side JS converts to the viewer's local timezone with AM/PM.
+build_date = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 # A37-002: Use API cache file mtime as "last refresh" indicator instead of build date
 _kpi_cache = os.path.join(SCRIPT_DIR, '..', '_kpi_all_members.json')
 if os.path.exists(_kpi_cache):
-    _cache_mtime = datetime.datetime.fromtimestamp(os.path.getmtime(_kpi_cache))
-    api_refresh_date = _cache_mtime.strftime('%Y-%m-%d %H:%M')
+    _cache_mtime = datetime.datetime.fromtimestamp(os.path.getmtime(_kpi_cache), tz=datetime.timezone.utc)
+    api_refresh_date = _cache_mtime.strftime('%Y-%m-%dT%H:%M:%SZ')
 else:
     api_refresh_date = 'unknown'
 # Find the most recent dateAdd in data for staleness comparison (only past/present dates)
@@ -690,13 +691,23 @@ function groupByMonth(weeks){
 }
 const MONTHS=groupByMonth(CORE_WEEKS);
 
-/* M11+A37: Staleness indicator — shows API cache mtime, not build date */
+/* M11+A37: Staleness indicator — converts UTC ISO timestamps to viewer's local timezone */
 (function(){
+  function fmtLocal(iso){
+    if(!iso||iso==='unknown')return iso;
+    const d=new Date(iso);
+    if(isNaN(d.getTime()))return iso;
+    const pad=n=>String(n).padStart(2,'0');
+    let h=d.getHours();
+    const ampm=h>=12?'PM':'AM';
+    h=h%12||12;
+    return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+h+':'+pad(d.getMinutes())+' '+ampm;
+  }
   const el=document.getElementById('refreshDate');
   const banner=document.getElementById('stalenessBanner');
   if(banner)banner.style.display='none';
-  const refreshLabel=API_REFRESH!=='unknown'?API_REFRESH:BUILD_DATE;
-  if(el)el.textContent='Data refreshed: '+refreshLabel+' | Built: '+BUILD_DATE;
+  const refreshLabel=API_REFRESH!=='unknown'?fmtLocal(API_REFRESH):fmtLocal(BUILD_DATE);
+  if(el)el.textContent='Data refreshed: '+refreshLabel+' | Built: '+fmtLocal(BUILD_DATE);
 })();
 
 /* ── State — M12: default to ALL ──────────────────── */
@@ -748,13 +759,21 @@ function hideTip(){tip.style.display='none'}
 function refreshDashboard(){
   const btn=document.getElementById('btnRefresh');
   const orig=btn.innerHTML;
-  if(!['localhost','127.0.0.1'].includes(location.hostname)){
-    alert("For dashboard updates, please reach out to Thiago Rodrigues.");
-    return;
-  }
+  const pw=prompt('Password required to refresh data:');
+  if(pw===null||pw==='') return;
+  const headers={'X-Refresh-Password':pw};
+  const showWrongPw=()=>{
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Wrong password';
+    btn.style.background='linear-gradient(135deg,#991b1b,#dc2626)';btn.style.opacity='1';
+    setTimeout(()=>{btn.innerHTML=orig;btn.style.background='linear-gradient(135deg,#1e40af,#2563eb)';btn.disabled=false},3000);
+  };
   btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" style="animation:spin 1s linear infinite"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>Refreshing...';
   btn.disabled=true;btn.style.opacity='.7';
-  fetch('/refresh',{method:'POST'}).then(r=>r.json()).then(d=>{
+  fetch('/refresh',{method:'POST',headers}).then(r=>{
+    if(r.status===401){showWrongPw();return null;}
+    return r.json();
+  }).then(d=>{
+    if(d===null) return;
     if(d.success){
       btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg>Done!';
       btn.style.background='linear-gradient(135deg,#065f46,#059669)';btn.style.opacity='1';
@@ -766,7 +785,11 @@ function refreshDashboard(){
     }
   }).catch(()=>{
     /* Server not running — try localhost:8787 in case file:// was opened directly */
-    fetch('http://localhost:8787/refresh',{method:'POST'}).then(r=>r.json()).then(d=>{
+    fetch('http://localhost:8787/refresh',{method:'POST',headers}).then(r=>{
+      if(r.status===401){showWrongPw();return null;}
+      return r.json();
+    }).then(d=>{
+      if(d===null) return;
       if(d.success){
         btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg>Done! Redirecting...';
         btn.style.background='linear-gradient(135deg,#065f46,#059669)';btn.style.opacity='1';
